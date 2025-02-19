@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mulat Tiruye - Computer Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <nav>
+            <div class="logo">Mulat Tiruye</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Mulat Tiruye</h1>
+            <p>Computer Engineer | PhD Candidate</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn">View Projects</a>
+                <a href="#contact" class="btn">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+            Welcome to my professional website! I am a Master's student in Computer Engineering at the University of Pisa, Italy. My research focuses on Artificial Intelligence, High-Performance Computing, and Quantum Computing. I am passionate about developing innovative solutions to complex problems.
+        </p>
+        <div class="about-details">
+            <div class="education">
+                <h3>Education</h3>
+                <ul>
+                    <li>University of Pisa - MSc in Computer Engineering (2023 - Present)</li>
+                    <li>SUTD & Chang Gung University - Dual Master's in Nano Electronics Engineering (2021 - 2023)</li>
+                    <li>KIIT University - B.Tech in Electronics and Electrical Engineering (2017 - 2021)</li>
+                </ul>
+            </div>
+            <div class="skills">
+                <h3>Skills</h3>
+                <ul>
+                    <li>Python, Java, C/C++, TensorFlow, PyTorch</li>
+                    <li>Cloud Computing (AWS, GCP, Docker)</li>
+                    <li>AI/ML, Computer Vision, High-Performance Computing</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Network-Automation System</h3>
+                <p>Designing an automated network system for device provisioning.</p>
+                <a href="https://github.com/yourusername/network-automation" target="_blank">View on GitHub</a>
+            </div>
+            <div class="project-card">
+                <h3>Fire Detection System</h3>
+                <p>Real-time fire detection using YOLOv8 with 93% accuracy.</p>
+                <a href="https://github.com/yourusername/fire-detection" target="_blank">View on GitHub</a>
+            </div>
+            <div class="project-card">
+                <h3>Cloud-Based Letter Counting</h3>
+                <p>Scalable Hadoop system for processing large datasets.</p>
+                <a href="https://github.com/yourusername/letter-counting" target="_blank">View on GitHub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="blog">
+        <h2>Blog</h2>
+        <div class="blog-posts">
+            <div class="blog-post">
+                <h3>Introduction to Quantum Computing</h3>
+                <p>Exploring the basics of quantum computing and its applications.</p>
+                <a href="#">Read More</a>
+            </div>
+            <div class="blog-post">
+                <h3>AI in High-Performance Computing</h3>
+                <p>How AI is revolutionizing HPC and distributed systems.</p>
+                <a href="#">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <div class="contact-info">
+            <p>Email: <a href="mailto:ayinetmulat2017@gmail.com">ayinetmulat2017@gmail.com</a></p>
+            <p>Phone: <a href="tel:+393513106304">+39 351 310 6304</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/mulat1221/" target="_blank">Mulat Tiruye</a></p>
+            <p>GitHub: <a href="https://github.com/mat1221-hub" target="_blank">mat1221-hub</a></p>
+        </div>
+        <form action="https://formspree.io/f/your-form-id" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mulat Tiruye. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/mulat1221/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/mat1221-hub" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Menu Toggle -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
