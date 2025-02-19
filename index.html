@@ -9,6 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Under Design Banner -->
+    <div class="under-design-banner">
+        <p>🚧 This page is under construction. We're designing it step by step! 🚧</p>
+    </div>
+
     <!-- Header and Navigation -->
     <header>
         <nav>
@@ -107,15 +112,17 @@
     <section id="contact" class="contact">
         <h2>Contact</h2>
         <div class="contact-info">
-            <p>Email: <a href="mailto:ayinetmulat2017@gmail.com">ayinetmulat2017@gmail.com</a></p>
+            <p>Email: <a href="mailto:m.tiruye3@gmail.com">m.tiruye3@gmail.com</a></p>
             <p>Phone: <a href="tel:+393513106304">+39 351 310 6304</a></p>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/mulat1221/" target="_blank">Mulat Tiruye</a></p>
-            <p>GitHub: <a href="https://github.com/mat1221-hub" target="_blank">mat1221-hub</a></p>
+            <p>GitHub: <a href="https://github.com/matcompute" target="_blank">mat1221-hub</a></p>
         </div>
-        <form action="https://formspree.io/f/your-form-id" method="POST">
+        <form action="submit_form.php" method="POST" enctype="multipart/form-data">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
             <textarea name="message" placeholder="Your Message" required></textarea>
+            <label for="cv">Upload CV (PDF only):</label>
+            <input type="file" id="cv" name="cv" accept=".pdf" required>
             <button type="submit">Send Message</button>
         </form>
     </section>
@@ -125,7 +132,7 @@
         <p>&copy; 2024 Mulat Tiruye. All rights reserved.</p>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/mulat1221/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/mat1221-hub" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/matcompute" target="_blank"><i class="fab fa-github"></i></a>
         </div>
     </footer>
 
