@@ -8,7 +8,7 @@ body {
 }
 
 h1, h2, h3 {
-    color: white;
+    color: maroon;
 }
 
 a {
@@ -18,6 +18,15 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* Under Design Banner */
+.under-design-banner {
+    background-color: #ffcc00;
+    color: #000;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
 }
 
 /* Header and Navigation */
@@ -147,7 +156,7 @@ form {
     gap: 1rem;
 }
 
-form input, form textarea {
+form input, form textarea, form input[type="file"] {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
