@@ -19,13 +19,8 @@
     };
   </script>
   <style>
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1s ease-out forwards;
-    }
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
+    .fade-in { opacity: 0; animation: fadeIn 1s ease-out forwards; }
+    @keyframes fadeIn { to { opacity: 1; } }
   </style>
 </head>
 <body class="bg-white text-gray-800 font-sans">
@@ -49,73 +44,116 @@
     <a href="assets/MA_TIRUYE_CV.pdf" download class="bg-white text-primary px-6 py-2 rounded-lg font-semibold hover:bg-accent hover:text-white transition">Download CV</a>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="max-w-6xl mx-auto p-6">
-    <h2 class="text-3xl font-bold text-primary mb-4">About Me</h2>
-    <p class="mb-6">Aspiring PhD researcher with a multidisciplinary background in Machine Learning, HPC, and Computer Networking. Published in IEEE conferences. Focused on explainable AI, federated learning, and distributed systems.</p>
-    <div class="grid md:grid-cols-3 gap-6">
-      <div>
-        <h3 class="text-xl font-semibold text-accent mb-2">University of Pisa</h3>
-        <img src="assets/Unipi-logo.png" alt="Unipi" class="h-16 mb-2" />
-        <p>MSc in Computer Engineering (2023 – Present)</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold text-accent mb-2">SUTD & Chang Gung</h3>
-        <img src="assets/SUTD-logo.png" alt="SUTD" class="h-10 mb-2" />
-        <img src="assets/CGU-logo.png" alt="CGU" class="h-10 mb-2" />
-        <p>MEng in Nano Electronics (2021 – 2023)</p>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold text-accent mb-2">KIIT University</h3>
-        <img src="assets/KIIT-Logo.png" alt="KIIT" class="h-16 mb-2" />
-        <p>B.Tech in EEE (2017 – 2021)</p>
+  <!-- Professional Summary -->
+  <section id="about" class="max-w-5xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold text-primary mb-6">Professional Summary</h2>
+    <p class="text-lg leading-relaxed text-gray-700">
+      Aspiring researcher with a multidisciplinary background in Machine Learning, High-Performance Computing (HPC), and Computer Networking. Experienced in designing scalable AI systems, optimizing parallel algorithms, and integrating ML into distributed environments. Published in IEEE conferences with demonstrated ability to work across AI model development, hardware acceleration, and system-level performance.
+      <br /><br />
+      Passionate about advancing explainable, federated, and cloud-native AI through high-impact research. Committed to contributing to the future of intelligent and efficient computing infrastructures.
+    </p>
+  </section>
+
+  <!-- Education -->
+  <section class="bg-gray-100 py-12 px-4">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-primary mb-6">Education</h2>
+      <div class="grid md:grid-cols-3 gap-6 text-center">
+        <div>
+          <img src="assets/Unipi-logo.png" alt="Unipi" class="h-20 mx-auto mb-2" />
+          <p class="font-semibold">University of Pisa</p>
+          <p>MSc Computer Engineering<br/>2023 – Present</p>
+        </div>
+        <div>
+          <img src="assets/SUTD-logo.png" alt="SUTD" class="h-12 mx-auto mb-1" />
+          <img src="assets/CGU-logo.png" alt="CGU" class="h-12 mx-auto mb-2" />
+          <p class="font-semibold">SUTD & Chang Gung University</p>
+          <p>MEng Nano Electronics<br/>2021 – 2023</p>
+        </div>
+        <div>
+          <img src="assets/KIIT-Logo.png" alt="KIIT" class="h-20 mx-auto mb-2" />
+          <p class="font-semibold">KIIT University</p>
+          <p>B.Tech in EEE<br/>2017 – 2021</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="bg-gray-100 py-12 px-4">
+  <!-- Projects -->
+  <section id="projects" class="py-12 px-4">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl font-bold text-primary mb-6">Projects</h2>
       <div class="grid md:grid-cols-2 gap-6">
         <div class="bg-white p-4 rounded shadow">
-          <h3 class="font-bold text-accent">ML Monitoring Pipeline (w/ XAI)</h3>
-          <p>SHAP + Weights & Biases based system to track model transparency and detect data drift.</p>
+          <h3 class="text-accent font-semibold">ML Monitoring Pipeline (with XAI)</h3>
+          <p>Monitors ML model performance with SHAP and Weights & Biases. Improves model transparency in production.</p>
+          <a href="#" class="text-sm text-accent underline">[Project Link]</a>
         </div>
         <div class="bg-white p-4 rounded shadow">
-          <h3 class="font-bold text-accent">Network-Automation System</h3>
-          <p>Automated provisioning of routers using Python templates. Cut manual effort by 80%.</p>
+          <h3 class="text-accent font-semibold">Network Automation System</h3>
+          <p>Python-based config generator for BGP routers. Reduced setup time by 80%.</p>
+          <a href="#" class="text-sm text-accent underline">[GitHub]</a>
         </div>
         <div class="bg-white p-4 rounded shadow">
-          <h3 class="font-bold text-accent">Fire Detection (YOLOv8)</h3>
-          <p>Realtime fire detection with 93% mAP and optimized latency to 0.4ms.</p>
+          <h3 class="text-accent font-semibold">Fire Detection System (YOLOv8)</h3>
+          <p>93% mAP accuracy using YOLOv8. Optimized for low latency and edge deployment.</p>
+          <a href="#" class="text-sm text-accent underline">[Code Demo]</a>
         </div>
         <div class="bg-white p-4 rounded shadow">
-          <h3 class="font-bold text-accent">Secure Bulletin Board</h3>
-          <p>Built with OpenSSL in C++, reduced unauthorized access by 30%.</p>
+          <h3 class="text-accent font-semibold">CineLink Database System</h3>
+          <p>Movie database with MongoDB + Neo4j. 12K+ entries with recommendation engine.</p>
+          <a href="#" class="text-sm text-accent underline">[Live Demo]</a>
         </div>
+        <!-- Add more if needed -->
       </div>
     </div>
+
+
+
+    
   </section>
 
   <!-- Publications -->
-  <section id="publications" class="max-w-6xl mx-auto p-6">
-    <h2 class="text-3xl font-bold text-primary mb-6">Publications</h2>
-    <ul class="list-disc list-inside space-y-3">
-      <li><strong>MA Tiruye</strong>, OB Gerba, T.Hui Teo. “A 155 MHz Low-Jitter PLL for Enhanced Signal Integrity”. IEEE, 2024.</li>
-      <li><strong>M.A. Tiruye</strong>. “Dual Mode Systolic Array-Based Processing Element for CNN Accelerator.” CGU Library, 2023.</li>
-      <li>Shi Hui Chua, T.Hui Teo, <strong>Mulat Ayinet Tiruye</strong>, I-Chyn Wey. “CNN Inference on FPGA.” IEEE, 2023.</li>
-      <li>Tan Rong Loo, T.Hui Teo, <strong>Mulat Ayinet Tiruye</strong>, I-Chyn Wey. “Asynchronous CNN Accelerator.” IEEE, 2023.</li>
-    </ul>
+  <section id="publications" class="bg-gray-100 py-12 px-4">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-primary mb-6">Publications</h2>
+      <ul class="space-y-4 text-lg leading-relaxed list-disc list-inside">
+        <li>
+          <strong>MA Tiruye</strong>, OB Gerba, T. Hui Teo. 
+          <em>“AI-Optimized Federated Learning with Dynamic Scheduling for HPC.”</em> IEEE, 2025. 
+          <a href="#" class="text-accent underline ml-2">[PDF]</a>
+        </li>
+        <li>
+          <strong>MA Tiruye</strong>, OB Gerba, T. Hui Teo.
+          <em>“155 MHz Low-Jitter PLL for Signal Integrity.”</em> IEEE, 2024.
+          <a href="#" class="text-accent underline ml-2">[PDF]</a>
+        </li>
+        <li>
+          <strong>M.A. Tiruye</strong>. 
+          <em>“Dual Mode Systolic Array for CNN Accelerator.”</em> Chang Gung University Library, 2023.
+          <a href="#" class="text-accent underline ml-2">[PDF]</a>
+        </li>
+        <li>
+          Shi Hui Chua, T. Hui Teo, <strong>Mulat Ayinet Tiruye</strong>, I-Chyn Wey.
+          <em>“Systolic CNN Inference on FPGA.”</em> IEEE, 2023.
+          <a href="#" class="text-accent underline ml-2">[PDF]</a>
+        </li>
+        <li>
+          Tan Rong Loo, T. Hui Teo, <strong>Mulat Ayinet Tiruye</strong>, I-Chyn Wey.
+          <em>“Asynchronous CNN Accelerator with Early Termination.”</em> IEEE, 2023.
+          <a href="#" class="text-accent underline ml-2">[PDF]</a>
+        </li>
+      </ul>
+    </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="bg-gray-100 p-6">
+  <section id="contact" class="py-12 px-4">
     <div class="max-w-2xl mx-auto text-center">
       <h2 class="text-3xl font-bold text-primary mb-4">Contact</h2>
       <p>Email: <a href="mailto:ayinetmulat2017@gmail.com" class="text-accent font-semibold">ayinetmulat2017@gmail.com</a></p>
       <p>Phone: <a href="tel:+393513106304" class="text-accent font-semibold">+39 351 310 6304</a></p>
-      <p>GitHub: <a href="https://github.com/mat1221-hub" target="_blank" class="text-accent">mat1221-hub</a></p>
+      <p>GitHub: <a href="https://github.com/matcompute" target="_blank" class="text-accent">matcompute</a></p>
       <p>LinkedIn: <a href="https://linkedin.com/in/mulat1221" target="_blank" class="text-accent">linkedin.com/in/mulat1221</a></p>
     </div>
   </section>
@@ -124,5 +162,6 @@
   <footer class="bg-primary text-white text-center p-4 mt-8">
     <p>&copy; 2024 Mulat Tiruye. All rights reserved.</p>
   </footer>
+
 </body>
 </html>
