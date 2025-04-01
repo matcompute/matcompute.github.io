@@ -1,147 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mulat Tiruye - Computer Engineer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mulat Tiruye - Computer Engineer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#7b1c1c',
+            accent: '#008080',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    .fade-in {
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards;
+    }
+    .fade-delay-100 { animation-delay: 0.2s; }
+    .fade-delay-200 { animation-delay: 0.4s; }
+    .fade-delay-300 { animation-delay: 0.6s; }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
-<body>
-    <!-- Under Design Banner -->
-    <div class="under-design-banner">
-        <p>🚧 This page is under construction. We're designing it step by step! 🚧</p>
+<body class="font-sans text-gray-800">
+
+  <!-- Under Construction -->
+  <div class="bg-yellow-400 text-center p-2 font-semibold">
+    🚧 This page is under construction. We're designing it step by step! 🚧
+  </div>
+
+  <!-- Header -->
+  <header class="bg-primary text-white sticky top-0 z-50 shadow-md">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+      <div class="text-2xl font-bold">Mulat Tiruye</div>
+      <nav class="hidden md:flex gap-6 text-sm font-medium">
+        <a href="#home" class="hover:text-accent">Home</a>
+        <a href="#about" class="hover:text-accent">About</a>
+        <a href="#projects" class="hover:text-accent">Projects</a>
+        <a href="#blog" class="hover:text-accent">Blog</a>
+        <a href="#contact" class="hover:text-accent">Contact</a>
+      </nav>
+      <div class="md:hidden">
+        <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
     </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-primary px-4 pb-4 space-y-2">
+      <a href="#home" class="block text-white">Home</a>
+      <a href="#about" class="block text-white">About</a>
+      <a href="#projects" class="block text-white">Projects</a>
+      <a href="#blog" class="block text-white">Blog</a>
+      <a href="#contact" class="block text-white">Contact</a>
+    </div>
+  </header>
 
-    <!-- Header and Navigation -->
-    <header>
-        <nav>
-            <div class="logo">Mulat Tiruye</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#blog">Blog</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-toggle" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
-            </div>
-        </nav>
-    </header>
+  <!-- Hero -->
+  <section id="home" class="min-h-screen flex flex-col justify-center items-center bg-gradient-to-br from-primary to-accent text-white text-center p-6">
+    <h1 class="text-5xl font-bold mb-4 fade-in">Mulat Tiruye</h1>
+    <p class="text-xl mb-6 fade-in fade-delay-100">Computer Engineer | MSc</p>
+    <div class="flex gap-4 fade-in fade-delay-200">
+      <a href="#projects" class="px-6 py-2 bg-white text-primary font-bold rounded-xl hover:bg-accent hover:text-white transition">View Projects</a>
+      <a href="#contact" class="px-6 py-2 bg-white text-primary font-bold rounded-xl hover:bg-accent hover:text-white transition">Contact Me</a>
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Mulat Tiruye</h1>
-            <p>Computer Engineer | MSc</p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn">View Projects</a>
-                <a href="#contact" class="btn">Contact Me</a>
-            </div>
+  <!-- About -->
+  <section id="about" class="max-w-6xl mx-auto px-4 py-16 fade-in">
+    <h2 class="text-3xl font-bold text-primary mb-6">About Me</h2>
+    <p class="mb-6">Welcome! I’m a Master's student in Computer Engineering at the University of Pisa, Italy. My research focuses on Artificial Intelligence, High-Performance Computing, and Quantum Computing. I love building smart, scalable systems.</p>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-xl font-semibold text-accent mb-2">Education</h3>
+        <ul class="list-disc list-inside space-y-2">
+          <li>University of Pisa - MSc in Computer Engineering (2023 - Present)</li>
+          <li>SUTD & Chang Gung - Dual Master's in Nano Electronics (2021 - 2023)</li>
+          <li>KIIT University - B.Tech in EEE (2017 - 2021)</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold text-accent mb-2">Skills</h3>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Python, Java, C/C++, TensorFlow, PyTorch</li>
+          <li>AWS, GCP, Docker, Linux</li>
+          <li>AI/ML, Computer Vision, HPC, Quantum Computing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="bg-gray-100 py-16 px-4 fade-in">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="text-3xl font-bold text-primary mb-8">Projects</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Network-Automation System</h3>
+          <p class="mb-4">Automated device provisioning and configuration system.</p>
+          <a href="https://github.com/yourusername/network-automation" class="text-accent font-semibold" target="_blank">View on GitHub</a>
         </div>
-    </section>
-
-    <!-- About Me Section -->
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>
-            Welcome to my professional website! I am a Master's student in Computer Engineering at the University of Pisa, Italy. My research focuses on Artificial Intelligence, High-Performance Computing, and Quantum Computing. I am passionate about developing innovative solutions to complex problems.
-        </p>
-        <div class="about-details">
-            <div class="education">
-                <h3>Education</h3>
-                <ul>
-                    <li>University of Pisa - MSc in Computer Engineering (2023 - Present)</li>
-                    <li>SUTD & Chang Gung University - Dual Master's in Nano Electronics Engineering (2021 - 2023)</li>
-                    <li>KIIT University - B.Tech in Electronics and Electrical Engineering (2017 - 2021)</li>
-                </ul>
-            </div>
-            <div class="skills">
-                <h3>Skills</h3>
-                <ul>
-                    <li>Python, Java, C/C++, TensorFlow, PyTorch</li>
-                    <li>Cloud Computing (AWS, GCP, Docker)</li>
-                    <li>AI/ML, Computer Vision, High-Performance Computing</li>
-                </ul>
-            </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Fire Detection System</h3>
+          <p class="mb-4">Real-time detection using YOLOv8 with 93% accuracy.</p>
+          <a href="https://github.com/yourusername/fire-detection" class="text-accent font-semibold" target="_blank">View on GitHub</a>
         </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <h2>Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <h3>Network-Automation System</h3>
-                <p>Designing an automated network system for device provisioning.</p>
-                <a href="https://github.com/yourusername/network-automation" target="_blank">View on GitHub</a>
-            </div>
-            <div class="project-card">
-                <h3>Fire Detection System</h3>
-                <p>Real-time fire detection using YOLOv8 with 93% accuracy.</p>
-                <a href="https://github.com/yourusername/fire-detection" target="_blank">View on GitHub</a>
-            </div>
-            <div class="project-card">
-                <h3>Cloud-Based Letter Counting</h3>
-                <p>Scalable Hadoop system for processing large datasets.</p>
-                <a href="https://github.com/yourusername/letter-counting" target="_blank">View on GitHub</a>
-            </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+          <h3 class="text-xl font-semibold mb-2">Cloud-Based Letter Counting</h3>
+          <p class="mb-4">Scalable data processing using Hadoop & HDFS.</p>
+          <a href="https://github.com/yourusername/letter-counting" class="text-accent font-semibold" target="_blank">View on GitHub</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Blog Section -->
-    <section id="blog" class="blog">
-        <h2>Blog</h2>
-        <div class="blog-posts">
-            <div class="blog-post">
-                <h3>Introduction to Quantum Computing</h3>
-                <p>Exploring the basics of quantum computing and its applications.</p>
-                <a href="#">Read More</a>
-            </div>
-            <div class="blog-post">
-                <h3>AI in High-Performance Computing</h3>
-                <p>How AI is revolutionizing HPC and distributed systems.</p>
-                <a href="#">Read More</a>
-            </div>
-        </div>
-    </section>
+  <!-- Blog -->
+  <section id="blog" class="max-w-6xl mx-auto px-4 py-16 fade-in">
+    <h2 class="text-3xl font-bold text-primary mb-8">Blog</h2>
+    <div class="grid gap-6 md:grid-cols-2">
+      <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">Intro to Quantum Computing</h3>
+        <p class="mb-4">Explore the basics and use-cases of quantum systems.</p>
+        <a href="#" class="text-accent font-semibold">Read More</a>
+      </div>
+      <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+        <h3 class="text-xl font-semibold mb-2">AI in High-Performance Computing</h3>
+        <p class="mb-4">How AI is transforming HPC and cluster systems.</p>
+        <a href="#" class="text-accent font-semibold">Read More</a>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <h2>Contact</h2>
-        <div class="contact-info">
-            <p>Email: <a href="mailto:m.tiruye3@gmail.com">m.tiruye3@gmail.com</a></p>
-            <p>Phone: <a href="tel:+393513106304">+39 351 310 6304</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/mulat1221/" target="_blank">Mulat Tiruye</a></p>
-            <p>GitHub: <a href="https://github.com/matcompute" target="_blank">matcompute</a></p>
-        </div>
-        <form action="submit_form.php" method="POST" enctype="multipart/form-data">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <label for="cv">Upload CV (PDF only):</label>
-            <input type="file" id="cv" name="cv" accept=".pdf" required>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+  <!-- Contact -->
+  <section id="contact" class="bg-gray-100 px-4 py-16 fade-in">
+    <div class="max-w-2xl mx-auto">
+      <h2 class="text-3xl font-bold text-primary mb-8 text-center">Contact Me</h2>
+      <div class="mb-6 text-center space-y-2">
+        <p>Email: <a href="mailto:m.tiruye3@gmail.com" class="text-accent">m.tiruye3@gmail.com</a></p>
+        <p>Phone: <a href="tel:+393513106304" class="text-accent">+39 351 310 6304</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/mulat1221/" class="text-accent" target="_blank">mulat1221</a></p>
+        <p>GitHub: <a href="https://github.com/matcompute" class="text-accent" target="_blank">matcompute</a></p>
+      </div>
+      <form class="space-y-4" action="submit_form.php" method="POST" enctype="multipart/form-data">
+        <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border rounded" />
+        <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 border rounded" />
+        <textarea name="message" placeholder="Your Message" rows="4" required class="w-full p-3 border rounded"></textarea>
+        <label class="block text-sm">Upload CV (PDF only):</label>
+        <input type="file" name="cv" accept=".pdf" required class="w-full p-2 border rounded" />
+        <button type="submit" class="w-full bg-primary text-white py-3 rounded hover:bg-accent transition">Send Message</button>
+      </form>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Mulat Tiruye. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/mulat1221/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/matcompute" target="_blank"><i class="fab fa-github"></i></a>
-        </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="bg-primary text-white text-center p-4 mt-12">
+    <p>&copy; 2024 Mulat Tiruye. All rights reserved.</p>
+    <div class="flex justify-center gap-4 mt-2">
+      <a href="https://linkedin.com/in/mulat1221" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/matcompute" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </footer>
 
-    <!-- JavaScript for Menu Toggle -->
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            navLinks.classList.toggle('active');
-        }
-    </script>
 </body>
 </html>
