@@ -22,6 +22,37 @@
     .fade-in { opacity: 0; animation: fadeIn 1s ease-out forwards; }
     @keyframes fadeIn { to { opacity: 1; } }
   </style>
+  <script>
+  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+</script>
+
+
+
+<button onclick="toggleTheme()" class="text-white bg-accent px-3 py-1 rounded text-sm">
+  Toggle Dark Mode
+</button>
+
+<script>
+  function toggleTheme() {
+    const html = document.documentElement;
+    if (html.classList.contains('dark')) {
+      html.classList.remove('dark');
+      localStorage.theme = 'light';
+    } else {
+      html.classList.add('dark');
+      localStorage.theme = 'dark';
+    }
+  }
+</script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>document.addEventListener("DOMContentLoaded", () => AOS.init());</script>
+
+  
 </head>
 <body class="bg-white text-gray-800 font-sans">
 
@@ -35,6 +66,7 @@
       <a href="#contact" class="hover:text-accent">Contact</a>
     </nav>
   </header>
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition duration-300">
 
   <!-- Hero -->
   <section class="text-center py-16 px-4 bg-gradient-to-br from-primary to-accent text-white">
@@ -52,6 +84,7 @@
       <br /><br />
       Passionate about advancing explainable, federated, and cloud-native AI through high-impact research. Committed to contributing to the future of intelligent and efficient computing infrastructures.
     </p>
+    <section id="about" class="..." data-aos="fade-up">
   </section>
 
   <!-- Education -->
@@ -78,6 +111,16 @@
       </div>
     </div>
   </section>
+<section id="research" class="max-w-4xl mx-auto px-6 py-12">
+  <h2 class="text-3xl font-bold text-primary mb-4">Research Interests</h2>
+  <ul class="list-disc list-inside space-y-2">
+    <li>High-Performance Computing for AI and Scientific Workloads</li>
+    <li>ML-Driven Network Optimization and SDN-AI Integration</li>
+    <li>Federated Learning & Explainable AI in Distributed Systems</li>
+    <li>Scalable AI Systems: Scheduling, Parallelism, and Edge Computing</li>
+    <li>Interdisciplinary AI Applications: Healthcare, IoT, Cybersecurity</li>
+  </ul>
+</section>
 
   <!-- Projects -->
   <section id="projects" class="py-12 px-4">
@@ -146,6 +189,37 @@
       </ul>
     </div>
   </section>
+<section id="honors" class="bg-gray-100 py-12 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-3xl font-bold text-primary mb-6">Awards & Memberships</h2>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div>
+        <h3 class="text-xl font-semibold text-accent mb-2">🎓 Scholarships</h3>
+        <ul class="list-disc list-inside space-y-2">
+          <li>🇮🇹 MAECI Scholarship – Italian Government (2023–2025)</li>
+          <li>🇸🇬 NEED Scholarship – SUTD (2021–2023)</li>
+          <li>🇪🇹 Betere Science Scholarship – Ethiopia (2017–2021)</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold text-accent mb-2">👥 Memberships</h3>
+        <ul class="list-disc list-inside space-y-2">
+          <li>IEEE Member (Since 2024)</li>
+          <li>IEEE Young Professionals</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold text-accent mb-2">🌐 Languages</h3>
+        <ul class="list-disc list-inside space-y-2">
+          <li>Amharic – Native</li>
+          <li>English – Fluent</li>
+          <li>Italian – Beginner (A1)</li>
+          <li>German – Beginner (A1)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
   <!-- Contact -->
   <section id="contact" class="py-12 px-4">
