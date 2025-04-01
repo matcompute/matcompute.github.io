@@ -23,38 +23,17 @@
     @keyframes fadeIn { to { opacity: 1; } }
   </style>
   <script>
-  if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark');
-  } else {
-    document.documentElement.classList.remove('dark');
-  }
-</script>
-
-
-
-<button onclick="toggleTheme()" class="text-white bg-accent px-3 py-1 rounded text-sm">
-  Toggle Dark Mode
-</button>
-
-<script>
-  function toggleTheme() {
-    const html = document.documentElement;
-    if (html.classList.contains('dark')) {
-      html.classList.remove('dark');
-      localStorage.theme = 'light';
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
     } else {
-      html.classList.add('dark');
-      localStorage.theme = 'dark';
+      document.documentElement.classList.remove('dark');
     }
-  }
-</script>
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>document.addEventListener("DOMContentLoaded", () => AOS.init());</script>
-
-  
+  </script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", () => AOS.init());</script>
 </head>
-<body class="bg-white text-gray-800 font-sans">
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition duration-300">
 
   <!-- Header -->
   <header class="bg-primary text-white p-4 flex justify-between items-center shadow-md sticky top-0 z-50">
@@ -65,8 +44,23 @@
       <a href="#publications" class="hover:text-accent">Publications</a>
       <a href="#contact" class="hover:text-accent">Contact</a>
     </nav>
+    <button onclick="toggleTheme()" class="text-white bg-accent px-3 py-1 rounded text-sm">
+      Toggle Dark Mode
+    </button>
   </header>
-<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-gray-100 transition duration-300">
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        localStorage.theme = 'light';
+      } else {
+        html.classList.add('dark');
+        localStorage.theme = 'dark';
+      }
+    }
+  </script>
 
   <!-- Hero -->
   <section class="text-center py-16 px-4 bg-gradient-to-br from-primary to-accent text-white">
@@ -77,18 +71,17 @@
   </section>
 
   <!-- Professional Summary -->
-  <section id="about" class="max-w-5xl mx-auto px-6 py-12">
+  <section id="about" class="max-w-5xl mx-auto px-6 py-12" data-aos="fade-up">
     <h2 class="text-3xl font-bold text-primary mb-6">Professional Summary</h2>
-    <p class="text-lg leading-relaxed text-gray-700">
+    <p class="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
       Aspiring researcher with a multidisciplinary background in Machine Learning, High-Performance Computing (HPC), and Computer Networking. Experienced in designing scalable AI systems, optimizing parallel algorithms, and integrating ML into distributed environments. Published in IEEE conferences with demonstrated ability to work across AI model development, hardware acceleration, and system-level performance.
       <br /><br />
       Passionate about advancing explainable, federated, and cloud-native AI through high-impact research. Committed to contributing to the future of intelligent and efficient computing infrastructures.
     </p>
-    <section id="about" class="..." data-aos="fade-up">
   </section>
 
   <!-- Education -->
-  <section class="bg-gray-100 py-12 px-4">
+  <section class="bg-gray-100 dark:bg-gray-800 py-12 px-4">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl font-bold text-primary mb-6">Education</h2>
       <div class="grid md:grid-cols-3 gap-6 text-center">
@@ -111,124 +104,123 @@
       </div>
     </div>
   </section>
-<section id="research" class="max-w-4xl mx-auto px-6 py-12">
-  <h2 class="text-3xl font-bold text-primary mb-4">Research Interests</h2>
-  <ul class="list-disc list-inside space-y-2">
-    <li>High-Performance Computing for AI and Scientific Workloads</li>
-    <li>ML-Driven Network Optimization and SDN-AI Integration</li>
-    <li>Federated Learning & Explainable AI in Distributed Systems</li>
-    <li>Scalable AI Systems: Scheduling, Parallelism, and Edge Computing</li>
-    <li>Interdisciplinary AI Applications: Healthcare, IoT, Cybersecurity</li>
-  </ul>
-</section>
+
+  <!-- Research Interests -->
+  <section id="research" class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold text-primary mb-4">Research Interests</h2>
+    <ul class="list-disc list-inside space-y-2 ml-4 text-gray-700 dark:text-gray-300">
+      <li>High-Performance Computing for AI and Scientific Workloads</li>
+      <li>ML-Driven Network Optimization and SDN-AI Integration</li>
+      <li>Federated Learning & Explainable AI in Distributed Systems</li>
+      <li>Scalable AI Systems: Scheduling, Parallelism, and Edge Computing</li>
+      <li>Interdisciplinary AI Applications: Healthcare, IoT, Cybersecurity</li>
+    </ul>
+  </section>
 
   <!-- Projects -->
   <section id="projects" class="py-12 px-4">
     <div class="max-w-6xl mx-auto">
       <h2 class="text-3xl font-bold text-primary mb-6">Projects</h2>
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-white p-4 rounded shadow">
+        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
           <h3 class="text-accent font-semibold">ML Monitoring Pipeline (with XAI)</h3>
-          <p>Monitors ML model performance with SHAP and Weights & Biases. Improves model transparency in production.</p>
+          <p class="dark:text-gray-300">Monitors ML model performance with SHAP and Weights & Biases. Improves model transparency in production.</p>
           <a href="#" class="text-sm text-accent underline">[Project Link]</a>
         </div>
-        <div class="bg-white p-4 rounded shadow">
+        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
           <h3 class="text-accent font-semibold">Network Automation System</h3>
-          <p>Python-based config generator for BGP routers. Reduced setup time by 80%.</p>
+          <p class="dark:text-gray-300">Python-based config generator for BGP routers. Reduced setup time by 80%.</p>
           <a href="#" class="text-sm text-accent underline">[GitHub]</a>
         </div>
-        <div class="bg-white p-4 rounded shadow">
+        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
           <h3 class="text-accent font-semibold">Fire Detection System (YOLOv8)</h3>
-          <p>93% mAP accuracy using YOLOv8. Optimized for low latency and edge deployment.</p>
+          <p class="dark:text-gray-300">93% mAP accuracy using YOLOv8. Optimized for low latency and edge deployment.</p>
           <a href="#" class="text-sm text-accent underline">[Code Demo]</a>
         </div>
-        <div class="bg-white p-4 rounded shadow">
+        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
           <h3 class="text-accent font-semibold">CineLink Database System</h3>
-          <p>Movie database with MongoDB + Neo4j. 12K+ entries with recommendation engine.</p>
+          <p class="dark:text-gray-300">Movie database with MongoDB + Neo4j. 12K+ entries with recommendation engine.</p>
           <a href="#" class="text-sm text-accent underline">[Live Demo]</a>
         </div>
-        <!-- Add more if needed -->
       </div>
     </div>
-
-
-
-    
   </section>
 
   <!-- Publications -->
-  <section id="publications" class="bg-gray-100 py-12 px-4">
+  <section id="publications" class="bg-gray-100 dark:bg-gray-800 py-12 px-4">
     <div class="max-w-5xl mx-auto">
       <h2 class="text-3xl font-bold text-primary mb-6">Publications</h2>
-      <ul class="space-y-4 text-lg leading-relaxed list-disc list-inside">
+      <ul class="space-y-4 text-lg leading-relaxed list-disc list-inside dark:text-gray-300">
         <li>
           <strong>MA Tiruye</strong>, TA. Muche, TA Tesfamichael. 
-          <em>“AI-Optimized Federated Learning with Dynamic Scheduling for HPC.”</em> IEEE, 2025. 
+          <em>"AI-Optimized Federated Learning with Dynamic Scheduling for HPC."</em> IEEE, 2025. 
           <a href="#" class="text-accent underline ml-2">[PDF]</a>
         </li>
         <li>
           <strong>MA Tiruye</strong>, OB Gerba, T. Hui Teo.
-          <em>“155 MHz Low-Jitter PLL for Signal Integrity.”</em> IEEE, 2024.
+          <em>"155 MHz Low-Jitter PLL for Signal Integrity."</em> IEEE, 2024.
           <a href="#" class="text-accent underline ml-2">[PDF]</a>
         </li>
         <li>
           <strong>M.A. Tiruye</strong>. 
-          <em>“Dual Mode Systolic Array for CNN Accelerator.”</em> Chang Gung University Library, 2023.
+          <em>"Dual Mode Systolic Array for CNN Accelerator."</em> Chang Gung University Library, 2023.
           <a href="#" class="text-accent underline ml-2">[PDF]</a>
         </li>
         <li>
           Shi Hui Chua, T. Hui Teo, <strong>Mulat Ayinet Tiruye</strong>, I-Chyn Wey.
-          <em>“Systolic CNN Inference on FPGA.”</em> IEEE, 2023.
+          <em>"Systolic CNN Inference on FPGA."</em> IEEE, 2023.
           <a href="#" class="text-accent underline ml-2">[PDF]</a>
         </li>
         <li>
           Tan Rong Loo, T. Hui Teo, <strong>Mulat Ayinet Tiruye</strong>, I-Chyn Wey.
-          <em>“Asynchronous CNN Accelerator with Early Termination.”</em> IEEE, 2023.
+          <em>"Asynchronous CNN Accelerator with Early Termination."</em> IEEE, 2023.
           <a href="#" class="text-accent underline ml-2">[PDF]</a>
         </li>
       </ul>
     </div>
   </section>
-<section id="honors" class="bg-gray-100 py-12 px-6">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold text-primary mb-6">Awards & Memberships</h2>
-    <div class="grid md:grid-cols-2 gap-6">
-      <div>
-        <h3 class="text-xl font-semibold text-accent mb-2">🎓 Scholarships</h3>
-        <ul class="list-disc list-inside space-y-2">
-          <li>🇮🇹 MAECI Scholarship – Italian Government (2023–2025)</li>
-          <li>🇸🇬 NEED Scholarship – SUTD (2021–2023)</li>
-          <li>🇪🇹 Betere Science Scholarship – Ethiopia (2017–2021)</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold text-accent mb-2">👥 Memberships</h3>
-        <ul class="list-disc list-inside space-y-2">
-          <li>IEEE Member (Since 2024)</li>
-          <li>IEEE Young Professionals</li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-xl font-semibold text-accent mb-2">🌐 Languages</h3>
-        <ul class="list-disc list-inside space-y-2">
-          <li>Amharic – Native</li>
-          <li>English – Fluent</li>
-          <li>Italian – Beginner (A1)</li>
-          <li>German – Beginner (A1)</li>
-        </ul>
+
+  <!-- Awards & Memberships -->
+  <section id="honors" class="bg-gray-100 dark:bg-gray-800 py-12 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-bold text-primary mb-6">Awards & Memberships</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="text-xl font-semibold text-accent mb-2">🎓 Scholarships</h3>
+          <ul class="list-disc list-inside space-y-2 dark:text-gray-300">
+            <li>🇮🇹 MAECI Scholarship – Italian Government (2023–2025)</li>
+            <li>🇸🇬 NEED Scholarship – SUTD (2021–2023)</li>
+            <li>🇪🇹 Betere Science Scholarship – Ethiopia (2017–2021)</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-accent mb-2">👥 Memberships</h3>
+          <ul class="list-disc list-inside space-y-2 dark:text-gray-300">
+            <li>IEEE Member (Since 2024)</li>
+            <li>IEEE Young Professionals</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold text-accent mb-2">🌐 Languages</h3>
+          <ul class="list-disc list-inside space-y-2 dark:text-gray-300">
+            <li>Amharic – Native</li>
+            <li>English – Fluent</li>
+            <li>Italian – Beginner (A1)</li>
+            <li>German – Beginner (A1)</li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Contact -->
   <section id="contact" class="py-12 px-4">
     <div class="max-w-2xl mx-auto text-center">
       <h2 class="text-3xl font-bold text-primary mb-4">Contact</h2>
-      <p>Email: <a href="mailto:ayinetmulat2017@gmail.com" class="text-accent font-semibold">ayinetmulat2017@gmail.com</a></p>
-      <p>Phone: <a href="tel:+393513106304" class="text-accent font-semibold">+39 351 310 6304</a></p>
-      <p>GitHub: <a href="https://github.com/matcompute" target="_blank" class="text-accent">matcompute</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/mulat1221" target="_blank" class="text-accent">linkedin.com/in/mulat1221</a></p>
+      <p class="dark:text-gray-300">Email: <a href="mailto:ayinetmulat2017@gmail.com" class="text-accent font-semibold">ayinetmulat2017@gmail.com</a></p>
+      <p class="dark:text-gray-300">Phone: <a href="tel:+393513106304" class="text-accent font-semibold">+39 351 310 6304</a></p>
+      <p class="dark:text-gray-300">GitHub: <a href="https://github.com/matcompute" target="_blank" class="text-accent">matcompute</a></p>
+      <p class="dark:text-gray-300">LinkedIn: <a href="https://linkedin.com/in/mulat1221" target="_blank" class="text-accent">linkedin.com/in/mulat1221</a></p>
     </div>
   </section>
 
